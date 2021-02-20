@@ -16,9 +16,15 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  int optionSelected = 0;
+  int optionSelected = 1;
   String languageSelected = 'English';
   List<String> langList = ['English', 'French', 'Italian', 'Portuguese'];
+  List<String> textList = [
+    'English Version of text',
+    'French Version of text',
+    'Italian Version of text',
+    'Portuguese Version of text'
+  ]; /* 3: HERE IS WHERE WE INPUT THE TEXT IN DIFFERENT LANGUAGES */ 
   List<String> emojiList = ['😃', '😔', '😯', '😡'];
 
   Widget _buildHome() {
@@ -33,7 +39,7 @@ class HomePageState extends State<HomePage> {
   bool status2 = false;
 
   Widget _buildSummary() {
-    int emojiIndex = 0;
+    int emojiIndex = 0; /* 1: HERE IS WHERE WE DEFINE THE SUMMARY */
     String emojiSelected = emojiList[emojiIndex];
     return Container(
       margin: EdgeInsets.only(left: 15, right: 15, top: 15),
@@ -102,7 +108,7 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-Widget _buildButton2() {
+  Widget _buildButton2() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -166,8 +172,8 @@ Widget _buildButton2() {
           ),
           Image.asset(
             status1
-                ? 'emotions.png'
-                : 'off.png', // HERE WE INPUT THE IMAGE AFTER ANALYSIS
+                ? 'emotions.png' /* 2: HERE IS WHERE WE INPUT THE IMAGE */
+                : 'off.png',
             width: 300,
             height: 250,
             fit: BoxFit.contain,
@@ -178,9 +184,8 @@ Widget _buildButton2() {
   }
 
   Widget _buildTranscipt() {
-    // Here you add the text to be showed
-    String transcript =
-        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.  amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ip';
+    String transcript = textList[optionSelected - 1];
+    //'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.  amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ip';
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -221,7 +226,7 @@ Widget _buildButton2() {
                     ),
                     _buildButton2(),
                     Text(
-                      ' |  $languageSelected',
+                      '| $languageSelected',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 18,
@@ -269,7 +274,9 @@ Widget _buildButton2() {
                 ),
                 width: 400,
                 child: Text(
-                  status2 ? '$transcript' : '                Turn transcript on to see it!',
+                  status2
+                      ? '$transcript'
+                      : '                Turn transcript on to see it!',
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.normal,
