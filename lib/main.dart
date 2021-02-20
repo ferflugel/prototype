@@ -17,77 +17,33 @@ class MyApp extends StatelessWidget {
 
 class HomePageState extends State<HomePage> {
   int optionSelected = 0;
+  String languageSelected = 'English';
+  List<String> langList = ['English', 'French', 'Italian', 'Portuguese'];
 
   Widget _buildHome() {
     return Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-          _buildImage(),
-          _buildTranscipt()
-        ]));
+            children: [_buildImage(), _buildTranscipt()]));
   }
 
   Widget _buildImage() {
     return Image.asset(
       'testing.png',
-      width: 200,
-      height: 200,
+      width: 300,
+      height: 300,
       fit: BoxFit.contain,
     );
   }
 
   Widget _buildTranscipt() {
+    // Here you add the text to be showed
     String transcript =
-        'Here we will have the transcript test. I am not sure how would we import this text, however. \n\nInput: $optionSelected';
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.';
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Language Selection',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            PopupMenuButton(
-              onSelected: (result) {
-                setState(() {
-                  optionSelected = result;
-                });
-              },
-              itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-                const PopupMenuItem(
-                  value: 1,
-                  child: Text('One'),
-                ),
-                const PopupMenuItem(
-                  value: 2,
-                  child: Text('Two'),
-                ),
-                const PopupMenuItem(
-                  value: 3,
-                  child: Text('Three'),
-                ),
-                const PopupMenuItem(
-                  value: 4,
-                  child: Text('Four'),
-                ),
-              ],
-            ),
-          ],
-        ),
-        Text(
-          'Selected: $optionSelected',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
         Container(
           margin: EdgeInsets.all(15),
           padding: EdgeInsets.all(10),
@@ -98,21 +54,62 @@ class HomePageState extends State<HomePage> {
           ),
           child: Column(
             children: [
-              Text(
-                'Transcript',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+              Container(
+                margin: EdgeInsets.all(8),
+                padding: EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                width: 400,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Transcript   |   $languageSelected',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    PopupMenuButton(
+                      onSelected: (result) {
+                        setState(() {
+                          optionSelected = result;
+                          languageSelected = langList[result - 1];
+                        });
+                      },
+                      itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+                        const PopupMenuItem(
+                          value: 1,
+                          child: Text('English'),
+                        ),
+                        const PopupMenuItem(
+                          value: 2,
+                          child: Text('French'),
+                        ),
+                        const PopupMenuItem(
+                          value: 3,
+                          child: Text('Italian'),
+                        ),
+                        const PopupMenuItem(
+                          value: 4,
+                          child: Text('Portuguese'),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(5),
+                margin: EdgeInsets.all(8),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                width: 200,
+                width: 400,
                 child: Text('$transcript'),
               ),
             ],
