@@ -19,8 +19,6 @@ class HomePageState extends State<HomePage> {
   int optionSelected = 0;
 
   Widget _buildHome() {
-    String transcript =
-      'Here we will have the transcript test. I am not sure how would we import this text, however. Input: $optionSelected';
     return Center(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -32,86 +30,92 @@ class HomePageState extends State<HomePage> {
             height: 100,
             fit: BoxFit.contain,
           ),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    'Language Selection',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  PopupMenuButton(
-                    onSelected: (result) {
-                      setState(() {
-                        optionSelected = result;
-                      });
-                    },
-                    itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-                      const PopupMenuItem(
-                        value: 1,
-                        child: Text('One'),
-                      ),
-                      const PopupMenuItem(
-                        value: 2,
-                        child: Text('Two'),
-                      ),
-                      const PopupMenuItem(
-                        value: 3,
-                        child: Text('Three'),
-                      ),
-                      const PopupMenuItem(
-                        value: 4,
-                        child: Text('Four'),
-                      ),
-                    ],
-                  ),
-                ],
+          _buildTranscipt()
+        ]
+      )
+    );
+  }
+
+  Widget _buildTranscipt() {
+    String transcript =
+        'Here we will have the transcript test. I am not sure how would we import this text, however. Input: $optionSelected';
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Row(
+          children: [
+            Text(
+              'Language Selection',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
               ),
+            ),
+            PopupMenuButton(
+              onSelected: (result) {
+                setState(() {
+                  optionSelected = result;
+                });
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+                const PopupMenuItem(
+                  value: 1,
+                  child: Text('One'),
+                ),
+                const PopupMenuItem(
+                  value: 2,
+                  child: Text('Two'),
+                ),
+                const PopupMenuItem(
+                  value: 3,
+                  child: Text('Three'),
+                ),
+                const PopupMenuItem(
+                  value: 4,
+                  child: Text('Four'),
+                ),
+              ],
+            ),
+          ],
+        ),
+        Text(
+          'Selected: $optionSelected',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.all(15),
+          padding: EdgeInsets.all(10),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Column(
+            children: [
               Text(
-                'Selected: $optionSelected',
+                'Transcript',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(15),
+                margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(10),
-                alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Column(
-                  children: [
-                    Text(
-                      'Transcript',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(5),
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      width: 200,
-                      child: Text('$transcript'),
-                    ),
-                  ],
-                ),
+                width: 200,
+                child: Text('$transcript'),
               ),
             ],
-          )
-        ],
-      ),
+          ),
+        ),
+      ],
     );
   }
 
