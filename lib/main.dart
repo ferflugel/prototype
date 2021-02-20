@@ -29,7 +29,8 @@ class HomePageState extends State<HomePage> {
             children: [_buildSummary(), _buildImage(), _buildTranscipt()]));
   }
 
-  bool status = false;
+  bool status1 = false;
+  bool status2 = false;
 
   Widget _buildSummary() {
     int emojiIndex = 0;
@@ -69,16 +70,22 @@ class HomePageState extends State<HomePage> {
 
   onSwitchValueChanged(bool newStatus) {
     setState(() {
-      status = newStatus;
+      status1 = newStatus;
     });
   }
 
-  Widget _buildButton() {
+  onSwitchValueChanged2(bool newStatus) {
+    setState(() {
+      status2 = newStatus;
+    });
+  }
+
+  Widget _buildButton1() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          status ? 'On' : 'Off',
+          status1 ? 'On' : 'Off',
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -86,9 +93,31 @@ class HomePageState extends State<HomePage> {
         ),
         Switch(
           activeColor: Colors.indigoAccent,
-          value: status,
+          value: status1,
           onChanged: (newStatus) {
             onSwitchValueChanged(newStatus);
+          },
+        ),
+      ],
+    );
+  }
+
+Widget _buildButton2() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          status2 ? 'On' : 'Off',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Switch(
+          activeColor: Colors.indigoAccent,
+          value: status2,
+          onChanged: (newStatus) {
+            onSwitchValueChanged2(newStatus);
           },
         ),
       ],
@@ -131,12 +160,12 @@ class HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                _buildButton(),
+                _buildButton1(),
               ],
             ),
           ),
           Image.asset(
-            status
+            status1
                 ? 'emotions.png'
                 : 'off.png', // HERE WE INPUT THE IMAGE AFTER ANALYSIS
             width: 300,
@@ -183,7 +212,16 @@ class HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Transcript   |   $languageSelected',
+                      'Transcript  ',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    _buildButton2(),
+                    Text(
+                      ' |  $languageSelected',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 18,
@@ -231,7 +269,7 @@ class HomePageState extends State<HomePage> {
                 ),
                 width: 400,
                 child: Text(
-                  '$transcript',
+                  status2 ? '$transcript' : '                Turn transcript on to see it!',
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.normal,
