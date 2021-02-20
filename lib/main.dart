@@ -23,9 +23,38 @@ class HomePageState extends State<HomePage> {
   Widget _buildHome() {
     return Center(
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [_buildImage(), _buildTranscipt()]));
+  }
+
+  bool status = false;
+
+  onSwitchValueChanged(bool newStatus) {
+    setState(() {
+      status = newStatus;
+    });
+  }
+
+  Widget _buildButton() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children:[
+      Text(status ? 'On' : 'Off',
+      style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+      ),
+      Switch(
+        activeColor: Colors.indigoAccent,
+        value: status,
+        onChanged: (newStatus) {
+          onSwitchValueChanged(newStatus);
+        },
+      ),
+      ],
+    );
   }
 
   Widget _buildImage() {
@@ -43,7 +72,7 @@ class HomePageState extends State<HomePage> {
       child: Column(
         children: [
           Container(
-            margin: EdgeInsets.all(15),
+            margin: EdgeInsets.all(5),
             padding: EdgeInsets.all(10),
             alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -53,17 +82,24 @@ class HomePageState extends State<HomePage> {
                 width: 3.0,
               ),
             ),
-            child: Text(
-              'Your image:',
+            child: 
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              Text(
+              'Display  ',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
+            _buildButton(),
+              ],
+            ),
           ),
           Image.asset(
-            'emotions.png', // HERE WE INPUT THE IMAGE AFTER ANALYSIS
+            status ? 'emotions.png' : 'testing.png', // HERE WE INPUT THE IMAGE AFTER ANALYSIS
             width: 300,
             height: 250,
             fit: BoxFit.contain,
@@ -76,12 +112,12 @@ class HomePageState extends State<HomePage> {
   Widget _buildTranscipt() {
     // Here you add the text to be showed
     String transcript =
-        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.';
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.  amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ip';
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          margin: EdgeInsets.all(15),
+          margin: EdgeInsets.only(left: 15, right: 15),
           padding: EdgeInsets.all(10),
           alignment: Alignment.center,
           decoration: BoxDecoration(
@@ -94,7 +130,7 @@ class HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.all(8),
+                margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(3),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -145,7 +181,7 @@ class HomePageState extends State<HomePage> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(8),
+                margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: Colors.white,
