@@ -6,17 +6,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hey Guys',
+      title: 'Prototype',
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: RandomWords(),
+      home: HomePage(),
     );
   }
 }
 
-class RandomWordsState extends State<RandomWords> {
-  Widget _buildSuggestions() {
+class HomePageState extends State<HomePage> {
+  Widget _buildHome() {
     return Center(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -107,13 +107,12 @@ class RandomWordsState extends State<RandomWords> {
       appBar: AppBar(
         title: Text('Emotion Recognition'),
       ),
-      body: _buildSuggestions(),
+      body: _buildHome(),
     );
   }
 }
-// #enddocregion RWS-var
 
-class RandomWords extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  RandomWordsState createState() => new RandomWordsState();
+  HomePageState createState() => new HomePageState();
 }
