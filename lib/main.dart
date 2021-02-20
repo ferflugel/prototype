@@ -29,11 +29,40 @@ class HomePageState extends State<HomePage> {
   }
 
   Widget _buildImage() {
-    return Image.asset(
-      'testing.png',
-      width: 300,
-      height: 300,
-      fit: BoxFit.contain,
+    return Container(
+      margin: EdgeInsets.all(15),
+      padding: EdgeInsets.all(10),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          width: 3.0,
+        ),
+      ),
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.all(15),
+            padding: EdgeInsets.all(10),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                width: 3.0,
+              ),
+            ),
+            child: Text('Hi'),
+          ),
+          Image.asset(
+            'emotions.png',
+            width: 300,
+            height: 250,
+            fit: BoxFit.contain,
+          ),
+        ],
+      ),
     );
   }
 
@@ -51,6 +80,9 @@ class HomePageState extends State<HomePage> {
           decoration: BoxDecoration(
             color: Colors.blue,
             borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              width: 3.0,
+            ),
           ),
           child: Column(
             children: [
@@ -60,6 +92,9 @@ class HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    width: 3.0,
+                  ),
                 ),
                 width: 400,
                 child: Row(
@@ -108,6 +143,9 @@ class HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    width: 3.0,
+                  ),
                 ),
                 width: 400,
                 child: Text('$transcript'),
