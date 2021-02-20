@@ -47,16 +47,23 @@ class HomePageState extends State<HomePage> {
             padding: EdgeInsets.all(10),
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 width: 3.0,
               ),
             ),
-            child: Text('Hi'),
+            child: Text(
+              'Your image:',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           Image.asset(
-            'emotions.png',
+            'emotions.png', // HERE WE INPUT THE IMAGE AFTER ANALYSIS
             width: 300,
             height: 250,
             fit: BoxFit.contain,
