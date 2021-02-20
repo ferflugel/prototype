@@ -24,7 +24,7 @@ class HomePageState extends State<HomePage> {
     'French Version of text',
     'Italian Version of text',
     'Portuguese Version of text'
-  ]; /* 3: HERE IS WHERE WE INPUT THE TEXT IN DIFFERENT LANGUAGES */ 
+  ]; /* 1: HERE IS WHERE WE INPUT THE TEXT IN DIFFERENT LANGUAGES */
   List<String> emojiList = ['😃', '😔', '😯', '😡'];
 
   Widget _buildHome() {
@@ -39,7 +39,7 @@ class HomePageState extends State<HomePage> {
   bool status2 = false;
 
   Widget _buildSummary() {
-    int emojiIndex = 0; /* 1: HERE IS WHERE WE DEFINE THE SUMMARY */
+    int emojiIndex = 0; /* 2: HERE IS WHERE WE DEFINE THE SUMMARY 1 = JOY, 2 = SORROW, 3 = SURPRISE, 4 = ANGRY*/
     String emojiSelected = emojiList[emojiIndex];
     return Container(
       margin: EdgeInsets.only(left: 15, right: 15, top: 15),
@@ -172,7 +172,7 @@ class HomePageState extends State<HomePage> {
           ),
           Image.asset(
             status1
-                ? 'emotions.png' /* 2: HERE IS WHERE WE INPUT THE IMAGE */
+                ? 'emotions.png' /* 3: HERE IS WHERE WE INPUT THE IMAGE */
                 : 'off.png',
             width: 300,
             height: 250,
@@ -185,7 +185,6 @@ class HomePageState extends State<HomePage> {
 
   Widget _buildTranscipt() {
     String transcript = textList[optionSelected - 1];
-    //'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.  amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ip';
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
