@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starflut/starflut.dart';
 
 void main() => runApp(MyApp());
 
@@ -38,7 +39,7 @@ class HomePageState extends State<HomePage> {
   bool status2 = false;
 
   Widget _buildSummary() {
-    int emojiIndex = 0; /* 2: HERE IS WHERE WE DEFINE THE SUMMARY 1 = JOY, 2 = SORROW, 3 = SURPRISE, 4 = ANGRY*/
+    int emojiIndex = 2; /* 2: HERE IS WHERE WE DEFINE THE SUMMARY 0 = JOY, 1 = SORROW, 2 = SURPRISE, 3 = ANGRY*/
     String emojiSelected = emojiList[emojiIndex];
     return Container(
       margin: EdgeInsets.only(left: 15, right: 15, top: 15),
