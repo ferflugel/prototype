@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Prototype',
       theme: ThemeData(
-        primaryColor: Colors.blue,
+        primaryColor: Colors.indigoAccent,
       ),
       home: HomePage(),
     );
@@ -34,7 +34,7 @@ class HomePageState extends State<HomePage> {
       padding: EdgeInsets.all(10),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Colors.indigoAccent,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           width: 3.0,
@@ -85,7 +85,7 @@ class HomePageState extends State<HomePage> {
           padding: EdgeInsets.all(10),
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: Colors.blue,
+            color: Colors.indigoAccent,
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
               width: 3.0,
