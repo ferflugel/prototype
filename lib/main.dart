@@ -30,7 +30,6 @@ class HomePageState extends State<HomePage> {
   Widget _buildHome() {
     return Center(
         child: Column(
-            //mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [_buildSummary(), _buildImage(), _buildTranscipt()]));
   }
@@ -115,7 +114,7 @@ class HomePageState extends State<HomePage> {
         Text(
           status2 ? 'On' : 'Off',
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 17,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -219,7 +218,7 @@ class HomePageState extends State<HomePage> {
                       'Transcript  ',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 17,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -228,7 +227,7 @@ class HomePageState extends State<HomePage> {
                       '| $languageSelected',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 17,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
