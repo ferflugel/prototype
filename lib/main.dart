@@ -20,29 +20,32 @@ class HomePageState extends State<HomePage> {
 
   Widget _buildHome() {
     return Center(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset(
-            'testing.png',
-            width: 100,
-            height: 100,
-            fit: BoxFit.contain,
-          ),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+          _buildImage(),
           _buildTranscipt()
-        ]
-      )
+        ]));
+  }
+
+  Widget _buildImage() {
+    return Image.asset(
+      'testing.png',
+      width: 200,
+      height: 200,
+      fit: BoxFit.contain,
     );
   }
 
   Widget _buildTranscipt() {
     String transcript =
-        'Here we will have the transcript test. I am not sure how would we import this text, however. Input: $optionSelected';
+        'Here we will have the transcript test. I am not sure how would we import this text, however. \n\nInput: $optionSelected';
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Language Selection',
