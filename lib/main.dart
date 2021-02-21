@@ -1,6 +1,25 @@
 import 'package:flutter/material.dart';
+// import 'dart:convert';
+// import 'request.dart';
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
 
 void main() => runApp(MyApp());
+
+Future<String> loadAsset() async {
+  String result = await rootBundle.loadString('images/transcript.txt');
+  print(result);
+  return result;
+}
+
+/*
+Future<String> createOrderMessage() async {
+  var data = await getData('http://10.0.2.2:5000/');
+  var decodedData = jsonDecode(data);
+  print(decodedData['query']);
+  return decodedData['query'];
+}
+*/
 
 class MyApp extends StatelessWidget {
   @override
@@ -19,12 +38,6 @@ class HomePageState extends State<HomePage> {
   int optionSelected = 1;
   String languageSelected = 'English';
   List<String> langList = ['English', 'French', 'Italian', 'Portuguese'];
-  List<String> textList = [
-    'English Version of text',
-    'French Version of text',
-    'Italian Version of text',
-    'Portuguese Version of text'
-  ]; /* 1: HERE IS WHERE WE INPUT THE TEXT IN DIFFERENT LANGUAGES */
   List<String> emojiList = ['😃', '😔', '😯', '😡'];
 
   Widget _buildHome() {
@@ -184,6 +197,13 @@ class HomePageState extends State<HomePage> {
   }
 
   Widget _buildTranscipt() {
+    List<String> textList = [
+      'Engli Version of text',
+      'French Version of text',
+      'Italian Version of text',
+      'Portuguese Version of text'
+    ]; /* 1: HERE IS WHERE WE INPUT THE TEXT IN DIFFERENT LANGUAGES */
+    // Future<String> transcript = loadAsset();
     String transcript = textList[optionSelected - 1];
     return Column(
       mainAxisSize: MainAxisSize.min,
