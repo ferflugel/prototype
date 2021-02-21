@@ -82,9 +82,7 @@ class HomePageState extends State<HomePage> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Image.asset('emoji3.png',
-          height: 20,
-          width: 20),
+          Image.asset('emoji.png', height: 20, width: 20),
         ],
       ),
     );
@@ -201,7 +199,7 @@ class HomePageState extends State<HomePage> {
 
   Widget _buildTranscipt() {
     List<String> textList = [
-      'Engli Version of text',
+      'English Version of text',
       'French Version of text',
       'Italian Version of text',
       'Portuguese Version of text'

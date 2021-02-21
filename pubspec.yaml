@@ -28,7 +28,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  # cupertino_icons: ^1.0.2
   starflut: ^1.0.0
   http: ^0.12.2
 
@@ -46,6 +46,7 @@ flutter:
     - testing.png
     - emotions.png
     - off.png
+    - emoji.png
     - emoji1.png
     - emoji2.png
     - emoji3.png

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "seismic-relic-305402",
+  "private_key_id": "f5e359af773da819b0afdb4a4433901c6208b284",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDS/9zF6M32nLIL\nd2ah5TNFVZ5r8qeYmf7iv0BMN4ua1RzxbVdOlPShAloi6yp7sNhOn5M0P5YwBk92\nk/V8Kl4WBRGNP3EdAfCeDzWqYur+2H0DLw224Frv7t5Mqu3VedMVgjVM8ULWcBce\nU2IZJX21z2FBs5C0gMgkxfghUgk8zEw2qslwcxoWU2VCYDJfenO+TVSPb3mgDEKf\n2CYMfFnPBFbt2sQx4MiM4IRm5XEtV8xV29U3DPCiZLs0Ao03LSSObrlDWvl+3T2+\nAvd4vcI91/4dOGsPt4HkA+MHnPOQnzXug5C04noehE470wt3fxUrfT5QaiHfedHn\nafewXCefAgMBAAECggEAWSmB86fTETlaC3pjRlqCdfQeQ+OAav34NX04AH0gY0dX\nObZIxI4xabCCwmq5wxcR8PeBzvxnzNd90M/pVpTYuVle918tv2JIeaJXvS6buyFk\ngmnp07Ou+eDo02EPq7wVNOuW9nKlGdS4EDqQI6wyGRgPMyJcLcqVyORXXE08VhIC\nNdGGAhD9+egSAeI8BxxjtYeOQKnUK6mkqsLvutFGLwBeqP0mXObQuiVFknwMfdAY\nvViCLf0rveVx1lJPJflFwh4ksnJSB0d5b1ZdQZl0PNLiMiIAMy+1LdB6XsUlKfQ8\ntPvbICCk0xa2Y/IKAGTuLLv67z/y4SfML2EIl5A30QKBgQDx4/7KREYKQLtFeslj\naAd2LMmfgJidCDLsnJUJNmJbYcejSwid82ydj/Jp+GFEi7wVqEnSlnLn97q1mBdu\ntq8i4MhX36Vt9ZMelV/y9rc87ftXGg0o8zC5VZXkpe8+ZUNxJYntHZoxE/CkHLYn\njsv1fSPmrt41rgyzJTzplSCFPQKBgQDfTpap2vfyNWp1zbmMO1nSMmbZkbtc2PIy\n8A6aVWFnHs6SwJHH7/sYUzGo/jmkIy77YjigV4HRP70MW/fJxRiteOMDQ0psL0u0\nfs9h+3vFiS6eIPzoBzFGL2MjwJSoSq6pZLX5CqEvJHbF4lI1nvGDwiXgHWNNx51S\n5s62W6MGCwKBgAJSUt60Gwv8JQ/8prQqim/K7EB4pn5TVtHIivGksPr5jEX38WQ6\nst8sQ4Ja3OwgfzSiAdtgkEfDq+oURJ1OaY3nJGUbg2Xzxm6ztlEJpyaRjij+2gN7\nmgsdVCv2n740kJokZxd8gj9YVqXslJ76kuCPS+np4b4YJo0NnXEMelxtAoGBAKX/\nt8RAgHzO9HrqGXqDTDwTN52Y1d0pcLIo/dIAkk2j+w/gkv48CT6F6a6kfZjkhrJc\ny5d2NYylgxVC8KpPGA8shCUSyqotZmugsO03k0S+u6bVAuxBHIH+DAaxzFBmY/yM\nXzHokvWGd7yWh2JQ61x04M7/SaiyMONFrHinGkMNAoGAJqSqvcUx9mHLFuF6pl2A\nkmQnMagDKI3kWm5m4p0t6o6uV2HmzcN9Hf8hKo9XqRa3e30xjfPFvAqoB+SU/CS/\nCEsaUducBM6KOHJkBu4SiCyX4px3z1M3y5iO969oR4YWllXtXUoaUxUQwapaz46T\nzGxlJc6XcgC1xZPrnzz8pGU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "uofthacks-speech@seismic-relic-305402.iam.gserviceaccount.com",
+  "client_id": "101812924540943998124",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/uofthacks-speech%40seismic-relic-305402.iam.gserviceaccount.com"
+}
