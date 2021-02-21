@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  path_provider: ^1.6.27
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -44,6 +45,7 @@ flutter:
     - testing.png
     - emotions.png
     - off.png
+    - transcript.txt
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
