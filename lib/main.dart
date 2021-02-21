@@ -2,14 +2,22 @@ import 'package:flutter/material.dart';
 // import 'dart:convert';
 // import 'request.dart';
 import 'dart:async' show Future;
-import 'package:flutter/services.dart' show rootBundle;
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 
 void main() => runApp(MyApp());
 
-Future<String> loadAsset() async {
-  String result = await rootBundle.loadString('images/transcript.txt');
-  print(result);
-  return result;
+Future<String> _read() async {
+  String text;
+  try {
+    final Directory directory = await getApplicationDocumentsDirectory();
+    final File file = File('${directory.path}/transcript.txt');
+    text = await file.readAsString();
+  } catch (e) {
+    text = 'error';
+    print("Couldn't read file");
+  }
+  return text;
 }
 
 /*
@@ -52,7 +60,7 @@ class HomePageState extends State<HomePage> {
 
   Widget _buildSummary() {
     int emojiIndex =
-        2; /* 2: HERE IS WHERE WE DEFINE THE SUMMARY 0 = JOY, 1 = SORROW, 2 = SURPRISE, 3 = ANGRY*/
+        1; /* 2: HERE IS WHERE WE DEFINE THE SUMMARY 0 = JOY, 1 = SORROW, 2 = SURPRISE, 3 = ANGRY*/
     String emojiSelected = emojiList[emojiIndex];
     return Container(
       margin: EdgeInsets.only(left: 15, right: 15, top: 15),
@@ -203,8 +211,8 @@ class HomePageState extends State<HomePage> {
       'Italian Version of text',
       'Portuguese Version of text'
     ]; /* 1: HERE IS WHERE WE INPUT THE TEXT IN DIFFERENT LANGUAGES */
-    // Future<String> transcript = loadAsset();
-    String transcript = textList[optionSelected - 1];
+    // String transcript = textList[optionSelected - 1];
+    Future<String> transcript = _read();
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
