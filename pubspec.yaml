@@ -46,6 +46,10 @@ flutter:
     - testing.png
     - emotions.png
     - off.png
+    - emoji1.png
+    - emoji2.png
+    - emoji3.png
+    - emoji4.png
     - transcript.txt
 
   # The following line ensures that the Material Icons font is

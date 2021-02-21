@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 // import 'dart:convert';
 // import 'request.dart';
-import 'dart:async' show Future;
-import 'dart:io';
-import 'package:path_provider/path_provider.dart';
+//import 'dart:async' show Future;
+//import 'dart:io';
+//import 'package:path_provider/path_provider.dart';
 
 void main() => runApp(MyApp());
-
+/*
 Future<String> _read() async {
   String text;
   try {
@@ -19,7 +19,7 @@ Future<String> _read() async {
   }
   return text;
 }
-
+*/
 /*
 Future<String> createOrderMessage() async {
   var data = await getData('http://10.0.2.2:5000/');
@@ -46,7 +46,7 @@ class HomePageState extends State<HomePage> {
   int optionSelected = 1;
   String languageSelected = 'English';
   List<String> langList = ['English', 'French', 'Italian', 'Portuguese'];
-  List<String> emojiList = ['😃', '😔', '😯', '😡'];
+  // List<String> emojiList = ['😃', '😔', '😯', '😡'];
 
   Widget _buildHome() {
     return Center(
@@ -59,9 +59,8 @@ class HomePageState extends State<HomePage> {
   bool status2 = false;
 
   Widget _buildSummary() {
-    int emojiIndex =
-        1; /* 2: HERE IS WHERE WE DEFINE THE SUMMARY 0 = JOY, 1 = SORROW, 2 = SURPRISE, 3 = ANGRY*/
-    String emojiSelected = emojiList[emojiIndex];
+    //int emojiIndex = 1; /* 2: HERE IS WHERE WE DEFINE THE SUMMARY 0 = JOY, 1 = SORROW, 2 = SURPRISE, 3 = ANGRY*/
+    //String emojiSelected = emojiList[emojiIndex];
     return Container(
       margin: EdgeInsets.only(left: 15, right: 15, top: 15),
       padding: EdgeInsets.all(10),
@@ -83,13 +82,9 @@ class HomePageState extends State<HomePage> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Text(
-            '$emojiSelected',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          Image.asset('emoji3.png',
+          height: 20,
+          width: 20),
         ],
       ),
     );
@@ -211,8 +206,7 @@ class HomePageState extends State<HomePage> {
       'Italian Version of text',
       'Portuguese Version of text'
     ]; /* 1: HERE IS WHERE WE INPUT THE TEXT IN DIFFERENT LANGUAGES */
-    // String transcript = textList[optionSelected - 1];
-    Future<String> transcript = _read();
+    String transcript = textList[optionSelected - 1];
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
